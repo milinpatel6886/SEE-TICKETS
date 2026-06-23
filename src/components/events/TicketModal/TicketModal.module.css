@@ -17,7 +17,7 @@
 
 /* ── The modal box itself, centered on screen ── */
 .modal {
-  background: var(--surface-color, #161616);
+  background: var(--color-surface);
   color: #fff;
   width: 100%;
   max-width: 480px;
@@ -189,7 +189,7 @@
   gap: 1rem;
   padding: 1rem 1.5rem;
   border-top: 1px solid var(--border-color, #2a2a2a);
-  background: var(--surface-color, #161616);
+  background: var(--color-surface);
   flex-shrink: 0;
 }
 
