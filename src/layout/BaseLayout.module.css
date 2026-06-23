@@ -1,0 +1,15 @@
+/*=================BASELAYOUT CSS=================*/
+
+.layout {
+  display: flex;
+  flex-direction: column;
+  background: var(--color-bg);
+}
+
+/* Content sits below the fixed navbar.
+   Navbar component itself should be position: fixed/sticky, top: 0,
+   with height: var(--navbar-height) — this just reserves the matching space. */
+.content {
+  flex: 1;
+  min-height: calc(100vh - var(--navbar-height));
+}

@@ -1,0 +1,257 @@
+.hero {
+  position: relative;
+  overflow: hidden;
+  background: var(--color-bg);
+  padding: var(--space-8) var(--space-6) var(--space-7);
+  isolation: isolate;
+}
+
+/* ── Animated mesh-gradient backdrop, built from theme accent ── */
+.bloomA,
+.bloomB {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(70px);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.bloomA {
+  width: 60vw;
+  height: 60vw;
+  max-width: 900px;
+  max-height: 900px;
+  top: -25%;
+  left: -10%;
+  background: radial-gradient(circle, var(--color-accent) 0%, transparent 70%);
+  opacity: 0.55;
+  animation: drift1 18s ease-in-out infinite alternate;
+}
+
+.bloomB {
+  width: 45vw;
+  height: 45vw;
+  max-width: 700px;
+  max-height: 700px;
+  top: 10%;
+  right: -8%;
+  background: radial-gradient(circle, var(--color-accent-secondary) 0%, transparent 70%);
+  opacity: 0.18;
+  animation: drift2 22s ease-in-out infinite alternate;
+}
+
+@keyframes drift1 {
+  from { transform: translate(0, 0) scale(1); }
+  to   { transform: translate(6%, 8%) scale(1.12); }
+}
+
+@keyframes drift2 {
+  from { transform: translate(0, 0) scale(1); }
+  to   { transform: translate(-8%, -5%) scale(1.08); }
+}
+
+.noise {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background-image: radial-gradient(circle, rgba(255,255,255,0.025) 1px, transparent 1px);
+  background-size: 3px 3px;
+  mix-blend-mode: overlay;
+  opacity: 0.5;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bloomA, .bloomB { animation: none; }
+}
+
+/* ── Layout: copy left, carousel right ── */
+.inner {
+  position: relative;
+  z-index: 2;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(280px, 0.85fr) 1.6fr;
+  gap: var(--space-7);
+  align-items: center;
+}
+
+@media (max-width: 960px) {
+  .inner {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+}
+
+/* ── Left: copy ── */
+.copy {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: clamp(1.9rem, 3.4vw, 2.8rem);
+  font-weight: 800;
+  line-height: 1.08;
+  color: var(--color-text-primary);
+  margin: 0;
+  letter-spacing: -0.01em;
+  animation: copyFade 0.45s ease;
+}
+
+.meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  margin: 0;
+  animation: copyFade 0.45s ease;
+}
+
+.dot {
+  color: var(--color-text-muted);
+  font-size: 0.7rem;
+}
+
+@keyframes copyFade {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.ctaButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  padding: var(--space-3) var(--space-6);
+  margin-top: var(--space-2);
+  border-radius: var(--radius-lg);
+  background: var(--color-accent-secondary);
+  color: var(--color-accent-secondary-contrast);
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: background var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.ctaButton:hover {
+  background: var(--color-accent-secondary-hover);
+  box-shadow: var(--shadow-card-hover);
+}
+
+.ctaButton:active {
+  transform: scale(0.97);
+}
+
+.arrows {
+  display: flex;
+  gap: var(--space-3);
+  margin-top: var(--space-5);
+}
+
+.arrowButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid rgba(243, 240, 250, 0.12);
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(8px);
+  color: var(--color-text-primary);
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background var(--transition-fast), border-color var(--transition-fast), transform var(--transition-fast);
+}
+
+.arrowButton:hover {
+  background: var(--color-surface-hover);
+  border-color: var(--color-accent);
+}
+
+.arrowButton:active {
+  transform: scale(0.92);
+}
+
+/* ── Right: carousel ── */
+.viewport {
+  overflow: hidden;
+  cursor: grab;
+}
+
+.viewport:active {
+  cursor: grabbing;
+}
+
+.track {
+  display: flex;
+  gap: var(--space-5);
+}
+
+.slide {
+  position: relative;
+  flex: 0 0 78%;
+  min-width: 0;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  transform: scale(0.94);
+  opacity: 0.55;
+  transition: transform var(--transition-base), opacity var(--transition-base), box-shadow var(--transition-base);
+}
+
+@media (max-width: 640px) {
+  .slide {
+    flex: 0 0 88%;
+  }
+}
+
+.slideActive {
+  transform: scale(1);
+  opacity: 1;
+  box-shadow: var(--shadow-card-hover), var(--shadow-accent-glow);
+}
+
+.slideImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  user-select: none;
+}
+
+/* ── Dots ── */
+.dots {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  gap: var(--space-2);
+  margin-top: var(--space-6);
+}
+
+.dotButton {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(243, 240, 250, 0.18);
+  cursor: pointer;
+  padding: 0;
+  transition: background var(--transition-fast), width var(--transition-fast);
+}
+
+.dotButtonActive {
+  width: 22px;
+  border-radius: 999px;
+  background: var(--color-accent-secondary);
+}

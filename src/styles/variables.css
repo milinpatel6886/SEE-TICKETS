@@ -1,0 +1,51 @@
+:root {
+  /* Colors */
+  --color-bg: #121017;
+  --color-surface: #1c1922;
+  --color-surface-hover: #262230;
+  --color-text-primary: #f3f0fa;
+  --color-text-secondary: #cfc8db;
+  --color-text-muted: #8d86a0;
+  --color-accent: #8b5cf6;
+  --color-accent-hover: #a378f8;
+  --color-accent-contrast: #1c1033;
+  --color-accent-secondary: #d4fc4f;
+  --color-accent-secondary-hover: #def372;
+  --color-accent-secondary-contrast: #23290a;
+  /* --color-border: rgba(243, 240, 250, 0.08); */
+  --color-overlay-strong: rgba(0, 0, 0, 0.85);
+  --color-overlay-soft: rgba(0, 0, 0, 0.15);
+  --color-danger: #ff5470;
+
+  /* Typography */
+  --font-base: 'Inter', system-ui, -apple-system, Segoe UI, sans-serif;
+  --font-display: 'Inter', system-ui, -apple-system, Segoe UI, sans-serif;
+
+  /* Spacing scale */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+
+  /* Radius */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+
+  /* Shadows */
+  --shadow-card: 0 4px 16px rgba(0, 0, 0, 0.35);
+  --shadow-card-hover: 0 12px 28px rgba(0, 0, 0, 0.5);
+  --shadow-accent-glow: 0 0 0 3px rgba(139, 92, 246, 0.25);
+
+  /* Transitions */
+  --transition-fast: 150ms ease;
+  --transition-base: 250ms ease;
+
+  /* Layout */
+  --max-width: 1400px;
+  --navbar-height: 72px;
+}
