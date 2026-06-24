@@ -1,8 +1,8 @@
 import { useNavigate } from 'react-router-dom'
 import { QRCodeSVG } from 'qrcode.react'
 import { FiArrowLeft, FiCalendar, FiMapPin } from 'react-icons/fi'
-import { useAuth } from '../../context/Authcontext/Authcontext'
-import { getTicketsForUser } from '../../utils/ticketStorage'
+import { useAuth } from '../../../context/Authcontext/Authcontext'
+import { getTicketsForUser } from '../../../utils/ticketStorage'
 import styles from './MyTicketsPage.module.css'
 
 function MyTicketsPage() {

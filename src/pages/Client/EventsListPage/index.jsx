@@ -1,9 +1,9 @@
 import { useMemo } from "react";
 import { useNavigate } from "react-router-dom";
-import { useEvents } from "../../hooks/useEvents";
-import EventGrid from "../../components/events/EventGrid/EventGrid";
-import HeroCarousel from "../../components/events/HeroCarousel/HeroCarousel";
-import Footer from "../../components/Footer/Footer";
+import { useEvents } from "../../../hooks/useEvents";
+import EventGrid from "../../../components/events/EventGrid/EventGrid";
+import HeroCarousel from "../../../components/events/HeroCarousel/HeroCarousel";
+import Footer from "../../../components/Footer/Footer";
 import styles from "./EventsListPage.module.css";
 
 function EventsListPage() {

@@ -13,7 +13,7 @@ import {
   FiCrosshair,
 } from "react-icons/fi";
 
-import ScrollToTopButton from "../../../components/events/ScrollToTopButton/ScrollToTopButton";
+import ScrollToTopButton from "../../../../components/events/ScrollToTopButton/ScrollToTopButton";
 
 const categories = [
   {

@@ -1,6 +1,6 @@
 import { ArrowLeft } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import ScrollToTopButton from "../../../components/events/ScrollToTopButton/ScrollToTopButton";
+import ScrollToTopButton from "../../../../components/events/ScrollToTopButton/ScrollToTopButton";
 import "./CookiePolicy.css";
 
 const sections = [

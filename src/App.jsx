@@ -1,8 +1,8 @@
 import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
-import EventsListPage from "./pages/EventsListPage";
-import EventDetailsPage from "./pages/EventDetailsPage";
-import CheckoutPage from "./pages/CheckoutPage";
+import EventsListPage from "./pages/Client/EventsListPage";
+import EventDetailsPage from "./pages/Client/EventDetailsPage";
+import CheckoutPage from "./pages/Client/CheckoutPage";
 import BaseLayout from "./layout/BaseLayout";
 import { AuthProvider } from "./context/Authcontext/Authcontext";
 import { PUBLIC_ROUTES, PROTECTED_ROUTES } from "./routes";

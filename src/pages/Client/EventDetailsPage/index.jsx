@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react";
 import { useParams, useNavigate, Link } from "react-router-dom";
 import { FiArrowLeft, FiShare2, FiCheck } from "react-icons/fi";
-import { useEvent } from "../../hooks/useEvents";
-import EventMeta from "../../components/events/EventMeta/EventMeta";
-import EventInfoSection from "../../components/events/Eventinfosection/Eventinfosection";
-import ArtistCard from "../../components/events/ArtistCard/ArtistCard";
-import ArtistsCard from "../../components/events/ArtistsCard/ArtistsCard";
-import TicketModal from "../../components/events/TicketModal/TicketModal";
+import { useEvent } from "../../../hooks/useEvents";
+import EventMeta from "../../../components/events/EventMeta/EventMeta";
+import EventInfoSection from "../../../components/events/Eventinfosection/Eventinfosection";
+import ArtistCard from "../../../components/events/ArtistCard/ArtistCard";
+import ArtistsCard from "../../../components/events/ArtistsCard/ArtistsCard";
+import TicketModal from "../../../components/events/TicketModal/TicketModal";
 import styles from "./EventDetailsPage.module.css";
 
 const SCROLL_THRESHOLD = 280;

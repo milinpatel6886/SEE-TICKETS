@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { FiArrowLeft, FiUser, FiMail, FiPhone } from "react-icons/fi";
-import { useAuth } from "../../context/Authcontext/Authcontext";
+import { useAuth } from "../../../context/Authcontext/Authcontext";
 import styles from "./ProfilePage.module.css";
 
 function ProfilePage() {

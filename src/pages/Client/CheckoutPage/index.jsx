@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { FiArrowLeft, FiCalendar, FiMapPin } from "react-icons/fi";
-import { useAuth } from "../../context/Authcontext/Authcontext";
-import { saveTicketOrder } from "../../utils/ticketStorage";
-import AuthModal from "../../components/events/Authmodal/Authmodal";
-import AttendeeInfoModal from "../../components/events/Attendeeinfomodal/Attendeeinfomodal";
+import { useAuth } from "../../../context/Authcontext/Authcontext";
+import { saveTicketOrder } from "../../../utils/ticketStorage";
+import AuthModal from "../../../components/events/Authmodal/Authmodal";
+import AttendeeInfoModal from "../../../components/events/Attendeeinfomodal/Attendeeinfomodal";
 import styles from "./CheckoutPage.module.css";
 
 function CheckoutPage() {
