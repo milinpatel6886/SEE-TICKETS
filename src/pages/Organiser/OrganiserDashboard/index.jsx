@@ -93,10 +93,10 @@ function Dashboard({ userName = "thevisualevent", events = [] }) {
             Your Events
           </h2>
 
-          <button onClick={btnCreateEvent()} className="dash-create-btn">
+          {/* <button onClick={btnCreateEvent} className="dash-create-btn">
             <FiPlus />
             Create New Event
-          </button>
+          </button> */}
         </div>
 
         <div className="dash-tabs">
@@ -130,7 +130,7 @@ function Dashboard({ userName = "thevisualevent", events = [] }) {
                   Click the button below to list your first event and share it
                   with your community!
                 </p>
-                <button className="dash-empty-btn">
+                <button className="dash-empty-btn" onClick={btnCreateEvent}>
                   <FiPlus />
                   Create Your First Event
                 </button>

@@ -10,6 +10,10 @@ import CookiePolicy from "./pages/Legals/CookiePolicy";
 import LoginForm from "./pages/Organiser/LoginForm";
 import Dashboard from "./pages/Organiser/OrganiserDashboard";
 import CreateEventStep1 from "./pages/Organiser/Events/CreateEventStep1/CreateEventStep1";
+import CreateEventStep2 from "./pages/Organiser/Events/CreateEventStep2/CreateEventStep2";
+import CreateEventStep3 from "./pages/Organiser/Events/CreateEventStep3/CreateEventStep3";
+import CreateEventStep4 from "./pages/Organiser/Events/CreateEventStep4/CreateEventStep4";
+import CustomerHelpCenter from "./pages/HelpCenter/CustomerHelpCenter";
 
 export const PUBLIC_ROUTES = [{}];
 
@@ -51,15 +55,30 @@ export const PROTECTED_ROUTES = [
     element: <CookiePolicy />,
   },
   {
-    path:"/login-form",
-    element: <LoginForm/>
+    path: "/login-form",
+    element: <LoginForm />,
   },
   {
-    path:"/dashboard",
-    element: <Dashboard/>
+    path: "/dashboard",
+    element: <Dashboard />,
   },
   {
-    path:"/events/create-event1",
-    element: <CreateEventStep1/>
+    path: "/events/create-event1",
+    element: <CreateEventStep1 />,
+  },
+  {
+    path: "/events/create-event2",
+    element: <CreateEventStep2 />,
+  },
+  {
+    path: "/events/create-event3",
+    element: <CreateEventStep3 />,
+  },
+  {
+    path: "/events/create-event4",
+    element: <CreateEventStep4 />,
+  },{
+    path: "/customer-help-center",
+    element: <CustomerHelpCenter />,
   }
 ];

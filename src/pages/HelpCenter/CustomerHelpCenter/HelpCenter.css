@@ -1,0 +1,281 @@
+/* =========================================
+   Locality Help Center — HelpCenter.css
+   Uses CSS custom properties from :root
+   ========================================= */
+
+.hc-root {
+  /* min-height: 100vh; */
+  background-color: var(--color-bg);
+  font-family: var(--font-base);
+  color: var(--color-text-primary);
+  padding: var(--space-7) var(--space-5);
+}
+
+.hc-container {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+/* ---- Header ---- */
+.hc-header {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.hc-logo {
+  color: var(--color-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--space-1);
+}
+
+.hc-title {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-accent);
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+.hc-subtitle {
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+.hc-link {
+  color: var(--color-accent);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color var(--transition-fast);
+}
+
+.hc-link:hover {
+  color: var(--color-accent-secondary-hover);
+}
+
+/* ---- Search ---- */
+.hc-search-wrap {
+  position: relative;
+  width: 100%;
+}
+
+.hc-search-icon {
+  position: absolute;
+  left: var(--space-4);
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-text-muted);
+  pointer-events: none;
+  display: flex;
+}
+
+.hc-search {
+  width: 100%;
+  box-sizing: border-box;
+  background-color: var(--color-surface);
+  border: 1px solid rgba(243, 240, 250, 0.1);
+  border-radius: var(--radius-md);
+  color: var(--color-text-primary);
+  font-family: var(--font-base);
+  font-size: 0.875rem;
+  padding: var(--space-3) var(--space-4) var(--space-3) calc(var(--space-4) + 22px);
+  outline: none;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.hc-search::placeholder {
+  color: var(--color-text-muted);
+}
+
+.hc-search:focus {
+  border-color: var(--color-accent);
+  box-shadow: var(--shadow-accent-glow);
+}
+
+/* ---- Category Grid ---- */
+.hc-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-4);
+}
+
+.hc-grid > .hc-card:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+  max-width: 50%;
+}
+
+/* ---- Cards ---- */
+.hc-card {
+  background-color: var(--color-surface);
+  border: 1px solid rgba(243, 240, 250, 0.07);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  transition: background-color var(--transition-base), box-shadow var(--transition-base);
+}
+
+.hc-card:hover {
+  background-color: var(--color-surface-hover);
+  box-shadow: var(--shadow-card-hover);
+}
+
+.hc-card-header {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+}
+
+.hc-card-icon {
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: var(--color-accent);
+  display: flex;
+  align-items: center;
+}
+
+.hc-card-title {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-accent);
+  margin: 0 0 var(--space-1);
+  letter-spacing: 0.01em;
+}
+
+.hc-card-desc {
+  font-size: 0.775rem;
+  color: var(--color-text-muted);
+  margin: 0;
+  line-height: 1.55;
+}
+
+/* ---- Article Links ---- */
+.hc-article-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.hc-article-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  padding: var(--space-2) 0;
+  border-bottom: 1px solid rgba(243, 240, 250, 0.05);
+  transition: color var(--transition-fast);
+}
+
+.hc-article-link:hover {
+  color: var(--color-accent);
+}
+
+.hc-article-arrow {
+  flex-shrink: 0;
+  opacity: 0;
+  transform: translateX(-4px);
+  transition: opacity var(--transition-fast), transform var(--transition-fast);
+  color: var(--color-accent);
+}
+
+.hc-article-link:hover .hc-article-arrow {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.hc-article-list li:last-child .hc-article-link {
+  border-bottom: none;
+}
+
+/* ---- CTA Sections ---- */
+.hc-cta-section {
+  text-align: center;
+  padding: var(--space-5) var(--space-5);
+  border-top: 1px solid rgba(243, 240, 250, 0.07);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.hc-cta-heading {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+.hc-cta-sub {
+  font-size: 0.82rem;
+  color: var(--color-text-muted);
+  margin: 0 0 var(--space-2);
+}
+
+/* ---- Buttons ---- */
+.hc-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-base);
+  font-size: 0.82rem;
+  font-weight: 600;
+  border-radius: var(--radius-sm);
+  padding: var(--space-2) var(--space-4);
+  text-decoration: none;
+  cursor: pointer;
+  border: 1px solid rgba(243, 240, 250, 0.1);
+  transition: background-color var(--transition-fast), color var(--transition-fast), border-color var(--transition-fast);
+}
+
+.hc-btn-primary {
+  background-color: var(--color-surface-hover);
+  color: var(--color-text-secondary);
+}
+
+.hc-btn-primary:hover {
+  background-color: var(--color-accent);
+  color: var(--color-accent-contrast);
+  border-color: transparent;
+}
+
+.hc-btn-secondary {
+  background-color: var(--color-surface-hover);
+  color: var(--color-text-secondary);
+}
+
+.hc-btn-secondary:hover {
+  background-color: var(--color-accent);
+  color: var(--color-accent-secondary-contrast);
+  border-color: transparent;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 600px) {
+  .hc-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hc-grid > .hc-card:last-child:nth-child(odd) {
+    grid-column: auto;
+    max-width: 100%;
+  }
+
+  .hc-title {
+    font-size: 1.5rem;
+  }
+}

@@ -49,8 +49,7 @@ function CreateEventStep1() {
 
   const handleContinue = () => {
     if (!selected) return;
-    // TODO: persist selection + navigate to step 2
-    console.log("Selected service type:", selected);
+    navigate("/events/create-event2", { state: { serviceType: selected } });
   };
 
   const progressPercent = (CURRENT_STEP / TOTAL_STEPS) * 100;

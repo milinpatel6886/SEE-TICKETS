@@ -1,0 +1,354 @@
+.cestep-page {
+  min-height: 100vh;
+  width: 100%;
+  max-width: 980px;
+  margin: 0 auto;
+  padding: var(--space-6) var(--space-6) var(--space-8);
+  background-color: var(--color-bg);
+  color: var(--color-text-primary);
+  font-family: var(--font-base);
+}
+
+/* ── Back button (top) ── */
+.cestep-back-btn {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-bottom: var(--space-5);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.cestep-back-btn:hover {
+  color: var(--color-accent-hover);
+}
+
+.cestep-back-btn svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* ── Header ── */
+.cestep-header {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+}
+
+.cestep-header-icon {
+  width: 32px;
+  height: 32px;
+  color: var(--color-accent);
+  flex-shrink: 0;
+  margin-top: var(--space-1);
+}
+
+.cestep-title {
+  font-family: var(--font-display);
+  font-size: 1.85rem;
+  font-weight: 800;
+  color: var(--color-accent);
+  margin: 0 0 var(--space-1);
+}
+
+.cestep-subtitle {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+/* ── Progress bar ── */
+.cestep-progress-track {
+  width: 100%;
+  height: 6px;
+  background-color: var(--color-surface);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  margin-bottom: var(--space-6);
+}
+
+.cestep-progress-fill {
+  height: 100%;
+  background-color: var(--color-accent);
+  border-radius: var(--radius-sm);
+  transition: width var(--transition-base);
+}
+
+/* ── Card ── */
+.cestep-card {
+  background-color: var(--color-surface);
+  border: 1px solid rgba(243, 240, 250, 0.08);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  box-shadow: var(--shadow-card);
+}
+
+/* ── Shared field group/label/hint (matches step 2) ── */
+.cestep2-field-label {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin: 0 0 var(--space-1);
+}
+
+.cestep2-field-hint {
+  font-size: 0.85rem;
+  color: var(--color-text-secondary);
+  margin: 0 0 var(--space-3);
+}
+
+.cestep2-back-arrow-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: none;
+  border: none;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  border-radius: var(--radius-sm);
+  transition: color var(--transition-fast), background-color var(--transition-fast);
+}
+
+.cestep2-back-arrow-btn:hover {
+  color: var(--color-text-primary);
+  background-color: var(--color-surface-hover);
+}
+
+.cestep2-back-arrow-btn svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* ── Step 3 specific ── */
+.cestep3-field-group {
+  margin-bottom: var(--space-5);
+}
+
+.cestep3-upload-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--space-5);
+  margin-bottom: var(--space-5);
+}
+
+.cestep3-dropzone {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  width: 100%;
+  min-height: 220px;
+  padding: var(--space-5);
+  background-color: var(--color-bg);
+  border: 2px dashed rgba(243, 240, 250, 0.15);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  text-align: center;
+  font-family: var(--font-base);
+  transition: border-color var(--transition-fast), background-color var(--transition-fast);
+}
+
+.cestep3-dropzone:hover {
+  border-color: var(--color-accent);
+  background-color: var(--color-surface-hover);
+}
+
+.cestep3-dropzone-icon {
+  width: 30px;
+  height: 30px;
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-1);
+}
+
+.cestep3-dropzone-text {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.cestep3-dropzone-note {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+}
+
+.cestep3-hidden-input {
+  display: none;
+}
+
+.cestep3-text-input {
+  width: 100%;
+  padding: var(--space-3) var(--space-4);
+  font-size: 0.9rem;
+  font-family: var(--font-base);
+  color: var(--color-text-primary);
+  background-color: var(--color-bg);
+  border: 1px solid rgba(243, 240, 250, 0.08);
+  border-radius: var(--radius-md);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.cestep3-text-input::placeholder {
+  color: var(--color-text-muted);
+}
+
+.cestep3-text-input:focus {
+  outline: none;
+  border-color: var(--color-accent);
+  box-shadow: var(--shadow-accent-glow);
+}
+
+/* ── URL slug row ── */
+.cestep3-slug-row {
+  display: flex;
+  align-items: stretch;
+  border: 1px solid rgba(243, 240, 250, 0.08);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.cestep3-slug-row:focus-within {
+  border-color: var(--color-accent);
+  box-shadow: var(--shadow-accent-glow);
+}
+
+.cestep3-slug-prefix {
+  display: flex;
+  align-items: center;
+  padding: var(--space-3) var(--space-3);
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  background-color: var(--color-surface-hover);
+  border-right: 1px solid rgba(243, 240, 250, 0.08);
+  white-space: nowrap;
+}
+
+.cestep3-slug-input {
+  flex: 1;
+  min-width: 0;
+  padding: var(--space-3) var(--space-4);
+  font-size: 0.9rem;
+  font-family: var(--font-base);
+  color: var(--color-text-primary);
+  background-color: var(--color-bg);
+  border: none;
+  outline: none;
+}
+
+.cestep3-slug-input::placeholder {
+  color: var(--color-text-muted);
+}
+
+/* ── Footer ── */
+.cestep-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: var(--space-5);
+  border-top: 1px solid rgba(243, 240, 250, 0.08);
+}
+
+.cestep-reset-btn {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: color var(--transition-fast);
+}
+
+.cestep-reset-btn:hover {
+  color: var(--color-text-primary);
+}
+
+.cestep-reset-btn svg {
+  width: 15px;
+  height: 15px;
+}
+
+.cestep-continue-btn {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-5);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--color-accent-contrast);
+  background-color: var(--color-accent);
+  border: none;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: background-color var(--transition-fast), transform var(--transition-fast), opacity var(--transition-fast);
+}
+
+.cestep-continue-btn:hover:not(:disabled) {
+  background-color: var(--color-accent-hover);
+}
+
+.cestep-continue-btn:active:not(:disabled) {
+  transform: scale(0.97);
+}
+
+.cestep-continue-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.cestep-continue-btn svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  .cestep-page {
+    padding: var(--space-4);
+  }
+
+  .cestep-card {
+    padding: var(--space-4);
+  }
+
+  .cestep-title {
+    font-size: 1.4rem;
+  }
+
+  .cestep3-upload-row {
+    grid-template-columns: 1fr;
+  }
+
+  .cestep3-slug-row {
+    flex-direction: column;
+  }
+
+  .cestep3-slug-prefix {
+    border-right: none;
+    border-bottom: 1px solid rgba(243, 240, 250, 0.08);
+  }
+
+  .cestep-footer {
+    flex-wrap: wrap;
+    gap: var(--space-3);
+  }
+
+  .cestep-continue-btn {
+    width: 100%;
+    justify-content: center;
+    order: 1;
+  }
+}

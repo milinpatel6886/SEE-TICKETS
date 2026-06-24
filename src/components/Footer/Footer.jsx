@@ -13,11 +13,11 @@ const LINK_COLUMNS = [
   {
     heading: "SEE Tickets",
     links: [
-      { label: "Become an Organizer", to: "/organizer" },
-      { label: "Organizer Dashboard", to: "/organizer/dashboard" },
+      { label: "Become an Organizer", to: "/login-form" },
+      { label: "Organizer Dashboard", to: "/login-form" },
       { label: "List Your Event", to: "/login-form" },
-      { label: "Help Center", to: "/help" },
-      { label: "Events", to: "/events" },
+      { label: "Help Center", to: "/customer-help-center" },
+      { label: "Events", to: "/" },
     ],
   },
   {
