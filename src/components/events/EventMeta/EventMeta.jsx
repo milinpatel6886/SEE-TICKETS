@@ -1,9 +1,9 @@
-import { FiMapPin, FiCalendar, FiLock } from 'react-icons/fi'
-import { formatDate } from '../../../utils/formatDate'
-import { truncate } from '../../../utils/truncate'
-import styles from './EventMeta.module.css'
+import { FiMapPin, FiCalendar, FiLock } from "react-icons/fi";
+import { formatDate } from "../../../utils/formatDate";
+import { truncate } from "../../../utils/truncate";
+import styles from "./EventMeta.module.css";
 
-export default function EventMeta({ location, date, priceLabel, badge }) {
+function EventMeta({ location, date, priceLabel, badge }) {
   return (
     <div className={styles.meta}>
       <div className={styles.row}>
@@ -29,5 +29,7 @@ export default function EventMeta({ location, date, priceLabel, badge }) {
         )}
       </div>
     </div>
-  )
+  );
 }
+
+export default EventMeta;

@@ -1,0 +1,47 @@
+/* src/components/events/ShareButton/ShareButton.module.css */
+.shareButton {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-4);
+  background: var(--color-surface);
+  border: 1px solid rgba(243, 240, 250, 0.08);
+  border-radius: var(--radius-md);
+  color: var(--color-text-primary);
+  font-family: var(--font-base);
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background var(--transition-fast), transform var(--transition-fast);
+}
+
+.shareButton:hover {
+  background: var(--color-surface-hover);
+}
+
+.shareButton:active {
+  transform: scale(0.97);
+}
+
+.icon {
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.label {
+  white-space: nowrap;
+}
+
+.count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 6px;
+  background: rgba(139, 92, 246, 0.18);
+  color: var(--color-accent-hover);
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}

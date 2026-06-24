@@ -1,8 +1,8 @@
-import EventMeta from '../EventMeta/EventMeta'
-import styles from './EventCard.module.css'
+import EventMeta from "../EventMeta/EventMeta";
+import styles from "./EventCard.module.css";
 
-export default function EventCard({ event, onClick }) {
-  const { title, tagline, image, location, date, priceLabel, badge } = event
+function EventCard({ event, onClick }) {
+  const { title, tagline, image, location, date, priceLabel, badge } = event;
 
   return (
     <article className={styles.card} onClick={() => onClick?.(event)}>
@@ -15,8 +15,15 @@ export default function EventCard({ event, onClick }) {
 
       <div className={styles.body}>
         <h3 className={styles.title}>{title}</h3>
-        <EventMeta location={location} date={date} priceLabel={priceLabel} badge={badge} />
+        <EventMeta
+          location={location}
+          date={date}
+          priceLabel={priceLabel}
+          badge={badge}
+        />
       </div>
     </article>
-  )
+  );
 }
+
+export default EventCard;

@@ -123,7 +123,7 @@ function TermsCard({ terms }) {
   )
 }
 
-export default function EventInfoSection({ description, guides, location, terms }) {
+ function EventInfoSection({ description, guides, location, terms }) {
   return (
     <div className={styles.stack}>
       <AboutCard description={description} />
@@ -133,3 +133,5 @@ export default function EventInfoSection({ description, guides, location, terms 
     </div>
   )
 }
+
+export default EventInfoSection;

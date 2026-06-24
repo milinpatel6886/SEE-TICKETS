@@ -1,5 +1,6 @@
 import { ArrowLeft } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import ScrollToTopButton from "../../../components/events/ScrollToTopButton/ScrollToTopButton";
 import "./TermsAndConditions.css";
 
 const sections = [
@@ -126,12 +127,11 @@ When you create a profile, we automatically create a unique profile link (e.g., 
   },
 ];
 
-export default function TermsAndConditions() {
+function TermsAndConditions() {
   const navigate = useNavigate();
 
   return (
     <div className="terms-page">
-
       {/* Top bar */}
       <div className="terms-topbar">
         <button className="terms-back-btn" onClick={() => navigate(-1)}>
@@ -158,7 +158,9 @@ export default function TermsAndConditions() {
                       <h3 className="terms-subheading">{block.subheading}</h3>
                     )}
                     {block.body.split("\n\n").map((para, j) => (
-                      <p key={j} className="terms-paragraph">{para}</p>
+                      <p key={j} className="terms-paragraph">
+                        {para}
+                      </p>
                     ))}
                   </div>
                 ))}
@@ -173,7 +175,9 @@ export default function TermsAndConditions() {
           </div>
         </div>
       </div>
-
+      <ScrollToTopButton />
     </div>
   );
 }
+
+export default TermsAndConditions;

@@ -1,54 +1,64 @@
-import { useState } from 'react'
-import { FiX, FiMail, FiLock, FiUser } from 'react-icons/fi'
-import { FcGoogle } from 'react-icons/fc'
-import { useAuth } from '../../../context/Authcontext/Authcontext'
-import styles from './Authmodal.module.css'
+import { useState } from "react";
+import { FiX, FiMail, FiLock, FiUser } from "react-icons/fi";
+import { FcGoogle } from "react-icons/fc";
+import { useAuth } from "../../../context/Authcontext/Authcontext";
+import styles from "./Authmodal.module.css";
 
-export default function AuthModal({ onClose, onSuccess }) {
-  const { loginWithEmail, registerWithEmail, loginWithGoogle } = useAuth()
-  const [mode, setMode] = useState('login') // 'login' | 'register'
-  const [name, setName] = useState('')
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
-  const [isSubmitting, setIsSubmitting] = useState(false)
+function AuthModal({ onClose, onSuccess }) {
+  const { loginWithEmail, registerWithEmail, loginWithGoogle } = useAuth();
+  const [mode, setMode] = useState("login"); // 'login' | 'register'
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleOverlayClick = (e) => {
-    if (e.target === e.currentTarget) onClose()
-  }
+    if (e.target === e.currentTarget) onClose();
+  };
 
   const handleEmailSubmit = async (e) => {
-    e.preventDefault()
-    setIsSubmitting(true)
-    if (mode === 'register') {
-      await registerWithEmail(name, email, password)
+    e.preventDefault();
+    setIsSubmitting(true);
+    if (mode === "register") {
+      await registerWithEmail(name, email, password);
     } else {
-      await loginWithEmail(email, password)
+      await loginWithEmail(email, password);
     }
-    setIsSubmitting(false)
-    onSuccess?.()
-  }
+    setIsSubmitting(false);
+    onSuccess?.();
+  };
 
   const handleGoogleClick = async () => {
-    setIsSubmitting(true)
-    await loginWithGoogle()
-    setIsSubmitting(false)
-    onSuccess?.()
-  }
+    setIsSubmitting(true);
+    await loginWithGoogle();
+    setIsSubmitting(false);
+    onSuccess?.();
+  };
 
   return (
     <div className={styles.overlay} onClick={handleOverlayClick}>
-      <div className={styles.modal} role="dialog" aria-modal="true" aria-labelledby="auth-modal-title">
-        <button type="button" className={styles.closeButton} onClick={onClose} aria-label="Close">
+      <div
+        className={styles.modal}
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="auth-modal-title"
+      >
+        <button
+          type="button"
+          className={styles.closeButton}
+          onClick={onClose}
+          aria-label="Close"
+        >
           <FiX />
         </button>
 
         <h2 id="auth-modal-title" className={styles.title}>
-          {mode === 'login' ? 'Welcome back' : 'Create your account'}
+          {mode === "login" ? "Welcome back" : "Create your account"}
         </h2>
         <p className={styles.subtitle}>
-          {mode === 'login'
-            ? 'Log in to continue booking your tickets.'
-            : 'Sign up to book tickets and manage your orders.'}
+          {mode === "login"
+            ? "Log in to continue booking your tickets."
+            : "Sign up to book tickets and manage your orders."}
         </p>
 
         <button
@@ -66,7 +76,7 @@ export default function AuthModal({ onClose, onSuccess }) {
         </div>
 
         <form className={styles.form} onSubmit={handleEmailSubmit}>
-          {mode === 'register' && (
+          {mode === "register" && (
             <label className={styles.field}>
               <FiUser className={styles.fieldIcon} />
               <input
@@ -101,23 +111,39 @@ export default function AuthModal({ onClose, onSuccess }) {
             />
           </label>
 
-          <button type="submit" className={styles.submitButton} disabled={isSubmitting}>
-            {isSubmitting ? 'Please wait…' : mode === 'login' ? 'Log In' : 'Create Account'}
+          <button
+            type="submit"
+            className={styles.submitButton}
+            disabled={isSubmitting}
+          >
+            {isSubmitting
+              ? "Please wait…"
+              : mode === "login"
+                ? "Log In"
+                : "Create Account"}
           </button>
         </form>
 
         <p className={styles.switchModeText}>
-          {mode === 'login' ? (
+          {mode === "login" ? (
             <>
-              Don't have an account?{' '}
-              <button type="button" className={styles.switchModeButton} onClick={() => setMode('register')}>
+              Don't have an account?{" "}
+              <button
+                type="button"
+                className={styles.switchModeButton}
+                onClick={() => setMode("register")}
+              >
                 Sign up
               </button>
             </>
           ) : (
             <>
-              Already have an account?{' '}
-              <button type="button" className={styles.switchModeButton} onClick={() => setMode('login')}>
+              Already have an account?{" "}
+              <button
+                type="button"
+                className={styles.switchModeButton}
+                onClick={() => setMode("login")}
+              >
                 Log in
               </button>
             </>
@@ -125,5 +151,7 @@ export default function AuthModal({ onClose, onSuccess }) {
         </p>
       </div>
     </div>
-  )
+  );
 }
+
+export default AuthModal;

@@ -1,10 +1,14 @@
-import EventCard from '../EventCard/EventCard'
-import Skeleton from '../../common/Skeleton/Skeleton'
-import styles from './EventGrid.module.css'
+import EventCard from "../EventCard/EventCard";
+import Skeleton from "../../common/Skeleton/Skeleton";
+import styles from "./EventGrid.module.css";
 
-export default function EventGrid({ events, isLoading, error, onEventClick }) {
+function EventGrid({ events, isLoading, error, onEventClick }) {
   if (error) {
-    return <p className={styles.message}>Something went wrong loading events. Please try again.</p>
+    return (
+      <p className={styles.message}>
+        Something went wrong loading events. Please try again.
+      </p>
+    );
   }
 
   if (isLoading) {
@@ -14,11 +18,11 @@ export default function EventGrid({ events, isLoading, error, onEventClick }) {
           <Skeleton key={i} />
         ))}
       </div>
-    )
+    );
   }
 
   if (!events.length) {
-    return <p className={styles.message}>No events found.</p>
+    return <p className={styles.message}>No events found.</p>;
   }
 
   return (
@@ -27,5 +31,7 @@ export default function EventGrid({ events, isLoading, error, onEventClick }) {
         <EventCard key={event.id} event={event} onClick={onEventClick} />
       ))}
     </div>
-  )
+  );
 }
+
+export default EventGrid;

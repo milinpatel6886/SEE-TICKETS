@@ -1,6 +1,6 @@
 import styles from './ArtistCard.module.css'
 
-export default function ArtistCard({ artist }) {
+ function ArtistCard({ artist }) {
   if (!artist) return null
   const { name, role, photo } = artist
 
@@ -20,3 +20,5 @@ export default function ArtistCard({ artist }) {
     </div>
   )
 }
+
+export default ArtistCard;

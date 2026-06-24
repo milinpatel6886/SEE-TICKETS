@@ -1,57 +1,72 @@
-import { useState } from 'react'
-import { FiX, FiUser, FiPhone } from 'react-icons/fi'
-import styles from './AttendeeInfoModal.module.css'
+import { useState } from "react";
+import { FiX, FiUser, FiPhone } from "react-icons/fi";
+import styles from "./AttendeeInfoModal.module.css";
 
 /**
  * totalQty: number of attendee slots to collect
  * onClose: () => void
  * onSubmit: (attendees: [{name, phone}]) => void
  */
-export default function AttendeeInfoModal({ totalQty, onClose, onSubmit }) {
+function AttendeeInfoModal({ totalQty, onClose, onSubmit }) {
   const [attendees, setAttendees] = useState(
-    Array.from({ length: totalQty }, () => ({ name: '', phone: '' }))
-  )
-  const [error, setError] = useState('')
+    Array.from({ length: totalQty }, () => ({ name: "", phone: "" })),
+  );
+  const [error, setError] = useState("");
 
   const handleOverlayClick = (e) => {
-    if (e.target === e.currentTarget) onClose()
-  }
+    if (e.target === e.currentTarget) onClose();
+  };
 
   const updateAttendee = (index, field, value) => {
     setAttendees((prev) => {
-      const next = [...prev]
-      next[index] = { ...next[index], [field]: value }
-      return next
-    })
-  }
+      const next = [...prev];
+      next[index] = { ...next[index], [field]: value };
+      return next;
+    });
+  };
 
   const handleSubmit = (e) => {
-    e.preventDefault()
-    const incomplete = attendees.some((a) => !a.name.trim() || !a.phone.trim())
+    e.preventDefault();
+    const incomplete = attendees.some((a) => !a.name.trim() || !a.phone.trim());
     if (incomplete) {
-      setError('Please fill in name and phone number for all attendees.')
-      return
+      setError("Please fill in name and phone number for all attendees.");
+      return;
     }
-    const invalidPhone = attendees.some((a) => !/^\d{10}$/.test(a.phone.trim()))
+    const invalidPhone = attendees.some(
+      (a) => !/^\d{10}$/.test(a.phone.trim()),
+    );
     if (invalidPhone) {
-      setError('Please enter a valid 10-digit phone number for each attendee.')
-      return
+      setError("Please enter a valid 10-digit phone number for each attendee.");
+      return;
     }
-    setError('')
-    onSubmit(attendees)
-  }
+    setError("");
+    onSubmit(attendees);
+  };
 
   return (
     <div className={styles.overlay} onClick={handleOverlayClick}>
-      <div className={styles.modal} role="dialog" aria-modal="true" aria-labelledby="attendee-modal-title">
+      <div
+        className={styles.modal}
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="attendee-modal-title"
+      >
         <div className={styles.header}>
-          <h2 id="attendee-modal-title" className={styles.title}>Attendee Details</h2>
-          <button type="button" className={styles.closeButton} onClick={onClose} aria-label="Close">
+          <h2 id="attendee-modal-title" className={styles.title}>
+            Attendee Details
+          </h2>
+          <button
+            type="button"
+            className={styles.closeButton}
+            onClick={onClose}
+            aria-label="Close"
+          >
             <FiX />
           </button>
         </div>
         <p className={styles.subtitle}>
-          Please enter the name and phone number for each of your {totalQty} {totalQty === 1 ? 'ticket' : 'tickets'}.
+          Please enter the name and phone number for each of your {totalQty}{" "}
+          {totalQty === 1 ? "ticket" : "tickets"}.
         </p>
 
         <form className={styles.form} onSubmit={handleSubmit}>
@@ -66,7 +81,9 @@ export default function AttendeeInfoModal({ totalQty, onClose, onSubmit }) {
                     type="text"
                     placeholder="Full name"
                     value={attendee.name}
-                    onChange={(e) => updateAttendee(index, 'name', e.target.value)}
+                    onChange={(e) =>
+                      updateAttendee(index, "name", e.target.value)
+                    }
                     className={styles.input}
                   />
                 </label>
@@ -77,7 +94,9 @@ export default function AttendeeInfoModal({ totalQty, onClose, onSubmit }) {
                     type="tel"
                     placeholder="10-digit phone number"
                     value={attendee.phone}
-                    onChange={(e) => updateAttendee(index, 'phone', e.target.value)}
+                    onChange={(e) =>
+                      updateAttendee(index, "phone", e.target.value)
+                    }
                     className={styles.input}
                     maxLength={10}
                   />
@@ -94,5 +113,7 @@ export default function AttendeeInfoModal({ totalQty, onClose, onSubmit }) {
         </form>
       </div>
     </div>
-  )
+  );
 }
+
+export default AttendeeInfoModal;

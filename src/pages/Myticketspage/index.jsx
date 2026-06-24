@@ -5,7 +5,7 @@ import { useAuth } from '../../context/Authcontext/Authcontext'
 import { getTicketsForUser } from '../../utils/ticketStorage'
 import styles from './MyTicketsPage.module.css'
 
-export default function MyTicketsPage() {
+function MyTicketsPage() {
   const { user } = useAuth()
   const navigate = useNavigate()
 
@@ -88,3 +88,5 @@ export default function MyTicketsPage() {
     </div>
   )
 }
+
+export default MyTicketsPage;

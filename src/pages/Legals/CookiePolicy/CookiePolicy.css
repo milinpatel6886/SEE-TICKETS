@@ -1,0 +1,154 @@
+/* CookiePolicy.css */
+
+.cookie-page {
+  min-height: 100vh;
+  width: 100%;
+  padding: 24px 16px;
+  background-color: var(--color-bg);
+  color: var(--color-text-primary);
+  font-family: var(--font-base);
+}
+
+/* ── Top bar ── */
+.cookie-topbar {
+  max-width: 768px;
+  margin: 0 auto 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cookie-back-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  transition: color var(--transition-fast);
+  padding: 0;
+}
+
+.cookie-back-btn:hover {
+  color: var(--color-text-primary);
+}
+
+.cookie-back-btn svg {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+/* ── Card ── */
+.cookie-card {
+  max-width: 768px;
+  margin: 0 auto;
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(243, 240, 250, 0.08);
+  background-color: var(--color-surface);
+  padding: 48px 40px;
+  box-shadow: var(--shadow-card);
+}
+
+/* ── Header ── */
+.cookie-title {
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--color-accent);
+  margin: 0 0 12px;
+}
+
+.cookie-published {
+  font-size: 14px;
+  color: var(--color-text-muted);
+  margin: 0 0 40px;
+}
+
+/* ── Sections ── */
+.cookie-sections {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.cookie-section-heading {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--color-accent);
+  margin: 0 0 8px;
+}
+
+.cookie-divider {
+  height: 1px;
+  background-color: rgba(243, 240, 250, 0.08);
+  margin-bottom: 20px;
+  border: none;
+}
+
+.cookie-blocks {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.cookie-subheading {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin: 0 0 8px;
+}
+
+.cookie-paragraph {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--color-text-secondary);
+  margin: 0 0 12px;
+}
+
+.cookie-paragraph:last-child {
+  margin-bottom: 0;
+}
+
+/* ── Footer ── */
+.cookie-footer-divider {
+  height: 1px;
+  background-color: rgba(243, 240, 250, 0.08);
+  margin-bottom: 20px;
+  border: none;
+}
+
+.cookie-footer-note {
+  font-size: 14px;
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  .cookie-page {
+    padding: 16px 12px;
+  }
+
+  .cookie-card {
+    padding: 32px 20px;
+  }
+
+  .cookie-title {
+    font-size: 28px;
+  }
+
+  .cookie-section-heading {
+    font-size: 18px;
+  }
+
+  .cookie-subheading {
+    font-size: 15px;
+  }
+
+  .cookie-paragraph {
+    font-size: 14px;
+  }
+}

@@ -1,7 +1,7 @@
-import styles from './ArtistsCard.module.css'
+import styles from "./ArtistsCard.module.css";
 
-export default function ArtistsCard({ artists, ArtistCard }) {
-  if (!artists || artists.length === 0) return null
+function ArtistsCard({ artists, ArtistCard }) {
+  if (!artists || artists.length === 0) return null;
 
   return (
     <section className={styles.card}>
@@ -15,5 +15,7 @@ export default function ArtistsCard({ artists, ArtistCard }) {
         ))}
       </div>
     </section>
-  )
+  );
 }
+
+export default ArtistsCard;

@@ -1,8 +1,8 @@
 import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
-import EventsListPage from "./pages/EventsListPage/EventsListPage";
-import EventDetailsPage from "./pages/EventDetailsPage/EventDetailsPage";
-import CheckoutPage from "./pages/CheckoutPage/CheckoutPage";
+import EventsListPage from "./pages/EventsListPage";
+import EventDetailsPage from "./pages/EventDetailsPage";
+import CheckoutPage from "./pages/CheckoutPage";
 import BaseLayout from "./layout/BaseLayout";
 import { AuthProvider } from "./context/Authcontext/Authcontext";
 import { PUBLIC_ROUTES, PROTECTED_ROUTES } from "./routes";
@@ -18,11 +18,11 @@ function App() {
 
         {/* PROTECTED */}
         {/* <Route path="/" element={<ProtectedRoute />}> */}
-          <Route element={<BaseLayout />}>
-            {PROTECTED_ROUTES.map((route, index) => (
-              <Route key={index} path={route.path} element={route.element} />
-            ))}
-          </Route>
+        <Route element={<BaseLayout />}>
+          {PROTECTED_ROUTES.map((route, index) => (
+            <Route key={index} path={route.path} element={route.element} />
+          ))}
+        </Route>
         {/* </Route> */}
       </Routes>
     </AuthProvider>

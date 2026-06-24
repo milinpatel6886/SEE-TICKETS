@@ -1,6 +1,3 @@
-// Mock data — shaped the way a real API response would look.
-// Swap this for a fetch() call in src/hooks/useEvents.js once you have a backend.
-
 export const events = [
   {
     id: 'sufi-night-6',
