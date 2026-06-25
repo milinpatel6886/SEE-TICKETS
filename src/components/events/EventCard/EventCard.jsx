@@ -7,10 +7,16 @@ function EventCard({ event, onClick }) {
   return (
     <article className={styles.card} onClick={() => onClick?.(event)}>
       <div className={styles.posterWrap}>
-        <img src={image} alt={title} className={styles.poster} loading="lazy" />
+        <img
+          src={image}
+          alt={title}
+          className={styles.poster}
+          loading="lazy"
+          onError={(e) => (e.target.style.display = "none")} // ✅ hides broken img
+        />
         <div className={styles.overlay} />
-        {tagline && <p className={styles.tagline}>{tagline}</p>}
-        <span className={styles.watermark}>LOCALITY</span>
+        {/* {tagline && <p className={styles.tagline}>{tagline}</p>} */}
+        {/* <span className={styles.watermark}>LOCALITY</span> */}
       </div>
 
       <div className={styles.body}>

@@ -24,7 +24,7 @@ function EventMeta({ location, date, priceLabel, badge }) {
           </>
         ) : (
           <span className={styles.price}>
-            <span className={styles.rupee}>₹</span> {priceLabel}
+            <span className={styles.rupee}></span> {priceLabel}
           </span>
         )}
       </div>
