@@ -49,6 +49,7 @@ export const ORG_DELETE_EVENT = `${BASE_URL}/api/v1/organizer/events/delete`
 export const ORG_PUBLISH_EVENT = `${BASE_URL}/api/v1/organizer/events/publish`
 export const ORG_CANCEL_EVENT = `${BASE_URL}/api/v1/organizer/events/cancel`
 
+
 // Organizer - Event Media
 export const ORG_UPLOAD_BANNER = `${BASE_URL}/api/v1/organizer/events`
 export const ORG_UPLOAD_GALLERY = `${BASE_URL}/api/v1/organizer/events`
